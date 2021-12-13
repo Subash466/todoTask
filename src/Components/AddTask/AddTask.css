@@ -1,0 +1,13 @@
+.addTodo{
+  position: relative;
+}
+.addTodo Button{
+  display: inline;
+  background-color: rgb(29, 104, 48);
+  padding: 30px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -3.5rem;
+  left: 7rem;
+  opacity: 0.8;
+}

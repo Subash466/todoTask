@@ -1,0 +1,30 @@
+.header{
+  color: black;
+  display:flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.header .start{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.header h1{
+  margin:10px 10px;
+  font-size: 2.8rem;
+}
+.header .inside{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  font-weight: bold;
+}
+.header .inside span{
+  margin-top:15px;
+  margin-bottom: -10px;
+}
+.header .end{
+  margin:25px 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
