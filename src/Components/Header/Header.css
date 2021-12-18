@@ -3,28 +3,33 @@
   display:flex;
   justify-content: space-between;
   margin: 1rem 0;
+  padding:4px 20px;
+  position: relative;
+  background-color: rgb(255, 255, 255);
 }
-.header .start{
+ .start{
   display: flex;
   flex-direction: row;
   margin: 10px;
 }
 .header h1{
-  margin:10px 10px;
-  font-size: 2.8rem;
+  margin:5px 5px;
+  font-size: 2.5rem;
+  font-weight: bolder;
 }
-.header .inside{
+.inside{
   display: flex;
   flex-direction: column;
-  align-items:flex-start;
+  align-items: flex-start;
   font-weight: bold;
+  line-height: 12px;
+  font-size: 0.9rem;
 }
-.header .inside span{
+ .inside span{
   margin-top:15px;
   margin-bottom: -10px;
 }
-.header .end{
-  margin:25px 10px;
-  font-size: 1.3rem;
+ .end{
+  margin-top:25px ;
   font-weight: bold;
 }

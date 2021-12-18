@@ -2,7 +2,8 @@ import React,{ useState,useEffect} from 'react'
 import Header from '../Header/Header'
 import { v4 as uuidv4 } from 'uuid';
 import { BsCheck2Circle } from 'react-icons/bs';
-import '../../App.css'
+import './TodoList.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AddTask from '../AddTask/AddTask';
 const TodoList = () => {
   const [todoList,setTodoList]=useState([])
@@ -40,13 +41,12 @@ const checkCompleted=(taskId)=>{
  }
 //To delete task
  const deleteTask=(index)=>{
+   console.log('clicked')
   const newTask=[...todoList]
-    if (window.confirm("Do you want to delete?")) {
+    
       newTask.splice(index,1)
       setTodoList(newTask)
-    } else {
-     return newTask
-    }  
+   
 }
 
 //addTask
@@ -65,11 +65,11 @@ useEffect(() => {
          {todoList.map((task,index)=>{  //map list value
           return(
           <div className="show-list" key={task._id}>
-            <span onClick={()=>deleteTask(index)} className={task.isCompleted ?"shown completed" :"shown"}  >
-            {task.todoTask}
+            <span  className={task.isCompleted ?"checked completed" :"checked"} onClick={()=>deleteTask(index)} >
+             {task.todoTask}
             </span>
             <div  className="check-complete" onClick={()=>checkCompleted(task._id)}>
-            <div className={task.isCompleted?"hide completed-true":"hide"}>
+            <div className={task.isCompleted?"completed-true":"hide"}>
              <span ><BsCheck2Circle /></span>
             </div>
             </div>

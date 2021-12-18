@@ -24,14 +24,14 @@ const AddTask = (props) => {
 
   return (
     <div className="addTodo" >
-      <Button  onClick={handleShow}>
+      <div  onClick={handleShow}>
       <BsPlusLg />
-      </Button>
+      </div>
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Add todoTask</Modal.Title>
         </Modal.Header>
-        <Modal.Body><input type='text' placeholder = 'Add Task . . .' value = {task} onChange = {event => Settask(event.target.value)}/></Modal.Body>
+        <Modal.Body><input type='text' placeholder = 'Add Task . . .' value = {task} onChange = {event => Settask(event.target.value)} /></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Cancle
