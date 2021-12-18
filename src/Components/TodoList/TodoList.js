@@ -41,12 +41,11 @@ const checkCompleted=(taskId)=>{
  }
 //To delete task
  const deleteTask=(index)=>{
-   console.log('clicked')
-  const newTask=[...todoList]
-    
-      newTask.splice(index,1)
-      setTodoList(newTask)
-   
+   if (window.confirm("Do you want to delete this task?")) {
+     const newTask=[...todoList]
+     newTask.splice(index,1)
+     setTodoList(newTask)
+   } 
 }
 
 //addTask
@@ -59,13 +58,13 @@ useEffect(() => {
 },[])
 
   return (
+    <>
       <div className="todo-container">
-        <div> 
          <Header />
          {todoList.map((task,index)=>{  //map list value
           return(
-          <div className="show-list" key={task._id}>
-            <span  className={task.isCompleted ?"checked completed" :"checked"} onClick={()=>deleteTask(index)} >
+          <div className="shown-list" key={task._id}>
+            <span  className={task.isCompleted ?"checked finished" :"checked"} onClick={()=>deleteTask(index)} >
              {task.todoTask}
             </span>
             <div  className="check-complete" onClick={()=>checkCompleted(task._id)}>
@@ -74,10 +73,11 @@ useEffect(() => {
             </div>
             </div>
           </div>
+         
          )})}
-         </div>
-         <AddTask addTask={addTask}/>
         </div>
+        <AddTask addTask={addTask}/>
+     </> 
   )
 }
 
